@@ -48,4 +48,9 @@ export const Button = styled.button`
   border: 0px;
   width: 100px;
   height: 40px;
+  margin-top: 30px;
+`
+export const Des = styled.p`
+  color: #ff0b37;
+  font-size: 8px;
 `

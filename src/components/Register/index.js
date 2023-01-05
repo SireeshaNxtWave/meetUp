@@ -10,6 +10,7 @@ import {
   Input,
   Select,
   Button,
+  Des,
 } from './styledComponents'
 
 const topicsList = [
@@ -36,7 +37,10 @@ const topicsList = [
 ]
 
 class Register extends Component {
+  state = {nonEmpty: false}
+
   render() {
+    const {nonEmpty} = this.state
     return (
       <>
         <Header />
@@ -56,6 +60,7 @@ class Register extends Component {
             }
             const submitForm = event => {
               event.preventDefault()
+              this.setState(prevState => ({nonEmpty: !prevState.nonEmpty}))
               onSubmit()
             }
             return (
@@ -84,6 +89,7 @@ class Register extends Component {
                   </Select>
                   <Button type="submit">Register Now</Button>
                 </FormPage>
+                {nonEmpty && <Des>Please enter your name</Des>}
               </BgContainer>
             )
           }}
